@@ -91,7 +91,7 @@ int main() {
 
     long long start = current_time_millis();
     for (int i = 0; i < 30; i++) {
-        memcpy_threshold(destination_simd, source, 640*480, 99);
+        memcpy_threshold_asm(destination_simd, source, 640*480, 99);
         cv_img.data = destination_simd;
         standard_process();
     }
